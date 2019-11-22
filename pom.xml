@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 
-    Copyright 2018 Micro Focus or one of its affiliates.
+    Copyright 2019-2020 Micro Focus or one of its affiliates.
 
     The only warranties for products and services of Micro Focus and its
     affiliates and licensors ("Micro Focus") are set forth in the express
@@ -35,11 +35,10 @@
         <version>3.0.0-309</version>
     </parent>
 
-    <inceptionYear>2018</inceptionYear>
+    <inceptionYear>2019</inceptionYear>
 
     <properties>
-        <copyrightYear>2018</copyrightYear>
-        <copyrightNotice>Copyright ${copyrightYear} Micro Focus or one of its affiliates.</copyrightNotice>
+        <copyrightYear>2020</copyrightYear>
         <dockerHubOrganization>apolloscm</dockerHubOrganization>
         <dockerApolloOrg>${dockerImagePrefix}${dockerHubOrganization}${dockerOrgSeperator}</dockerApolloOrg>
         <dockerProjectVersion>${dockerVersionSeperator}${project.version}</dockerProjectVersion>

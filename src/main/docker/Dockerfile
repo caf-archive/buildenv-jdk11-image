@@ -1,5 +1,5 @@
 #
-# Copyright 2018 Micro Focus or one of its affiliates.
+# Copyright 2019-2020 Micro Focus or one of its affiliates.
 #
 # The only warranties for products and services of Micro Focus and its
 # affiliates and licensors ("Micro Focus") are set forth in the express
