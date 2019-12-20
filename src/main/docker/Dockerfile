@@ -17,14 +17,14 @@
 #
 # Public maven image that contains the mvn-entrypoint.sh and settings-docker.xml files required
 #
-FROM maven:3.6.2-jdk-8 AS public_maven
+FROM maven:3.6.3-jdk-8 AS public_maven
 
 #
 # Base on the standard image provided by the Release Engineering team
 #
 FROM cafapi/opensuse-jdk8:1
 
-ARG MAVEN_VERSION=3.6.2
+ARG MAVEN_VERSION=3.6.3
 ARG USER_HOME_DIR="/root"
 ARG BASE_URL=https://apache.osuosl.org/maven/maven-3/${MAVEN_VERSION}/binaries
 
@@ -38,7 +38,7 @@ RUN zypper -n install tar gzip \
   && echo "6e29de1b58e17a54465d07eaa18bbde60b774bd17b1d7efcd2bc8dbbaf91c62abe8acb3933c5c27e630dc3b118453d2d0ab7fb206cf403e204708555bb0a6059 /usr/share/maven/ref/settings-docker.xml" | sha512sum -c - \
   && mkdir -p /usr/share/maven /usr/share/maven/ref \
   && curl -fsSL -o /tmp/apache-maven.tar.gz ${BASE_URL}/apache-maven-${MAVEN_VERSION}-bin.tar.gz \
-  && echo "d941423d115cd021514bfd06c453658b1b3e39e6240969caf4315ab7119a77299713f14b620fb2571a264f8dff2473d8af3cb47b05acf0036fc2553199a5c1ee /tmp/apache-maven.tar.gz" | sha512sum -c - \
+  && echo "c35a1803a6e70a126e80b2b3ae33eed961f83ed74d18fcd16909b2d44d7dada3203f1ffe726c17ef8dcca2dcaa9fca676987befeadc9b9f759967a8cb77181c0 /tmp/apache-maven.tar.gz" | sha512sum -c - \
   && tar -xzf /tmp/apache-maven.tar.gz -C /usr/share/maven --strip-components=1 \
   && rm -f /tmp/apache-maven.tar.gz \
   && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
