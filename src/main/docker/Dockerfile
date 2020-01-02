@@ -33,7 +33,9 @@ COPY --from=public_maven /usr/local/bin/mvn-entrypoint.sh /usr/local/bin/
 COPY --from=public_maven /usr/share/maven/ref/settings-docker.xml /usr/share/maven/ref/
 
 # Confirm hash values of required files and configure maven
-RUN zypper -n install tar gzip \
+RUN zypper -n refresh && \
+  zypper -n update && \
+  zypper -n install tar gzip \
   && echo "d79812f7c4a5ee5e9509351ae14e84649cbe27d2fa069f433f32415a6a12d90ec52c49be09ff08af8a7aae48cc3ffecaee804a5e25547c4e3042d1f10c08c555 /usr/local/bin/mvn-entrypoint.sh" | sha512sum -c - \
   && echo "6e29de1b58e17a54465d07eaa18bbde60b774bd17b1d7efcd2bc8dbbaf91c62abe8acb3933c5c27e630dc3b118453d2d0ab7fb206cf403e204708555bb0a6059 /usr/share/maven/ref/settings-docker.xml" | sha512sum -c - \
   && mkdir -p /usr/share/maven /usr/share/maven/ref \
