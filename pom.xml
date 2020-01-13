@@ -21,26 +21,29 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.microfocus.darwin</groupId>
-    <artifactId>opensuse-jdk8-maven-image</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
-    <packaging>pom</packaging>
-
     <parent>
         <groupId>com.github.cafapi</groupId>
         <artifactId>caf-common-parent</artifactId>
         <version>2.1.0-129</version>
     </parent>
 
+    <artifactId>opensuse-jdk8-maven-image</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>openSUSE JDK8 Maven image</name>
+    <description>An openSUSE-based image which includes JDK8 and Maven.</description>
+    <url>https://github.com/CAFapi/opensuse-jdk8-maven-image</url>
+
     <inceptionYear>2019</inceptionYear>
 
     <properties>
         <copyrightYear>2020</copyrightYear>
-        <dockerHubOrganization>cafapi</dockerHubOrganization>
-        <dockerApolloOrg>${dockerImagePrefix}${dockerHubOrganization}${dockerOrgSeperator}</dockerApolloOrg>
-        <dockerProjectVersion>${dockerVersionSeperator}${project.version}</dockerProjectVersion>
         <maven.install.skip>true</maven.install.skip>
         <skipNexusStagingDeployMojo>true</skipNexusStagingDeployMojo>
+        <dockerHubOrganization>cafapi</dockerHubOrganization>
+        <dockerCafImagePrefix>${dockerImagePrefix}${dockerHubOrganization}${dockerOrgSeperator}</dockerCafImagePrefix>
+        <dockerProjectVersion>${dockerVersionSeperator}${project.version}</dockerProjectVersion>
     </properties>
 
     <build>
@@ -69,7 +72,7 @@
                     <autoPull>always</autoPull>
                     <images>
                         <image>
-                            <name>${dockerApolloOrg}opensuse-jdk8-maven${dockerProjectVersion}</name>
+                            <name>${dockerCafImagePrefix}opensuse-jdk8-maven${dockerProjectVersion}</name>
                             <build>
                                 <dockerFileDir>.</dockerFileDir>
                                 <args>
@@ -91,18 +94,13 @@
                     <verbose>true</verbose>
                 </configuration>
             </plugin>
-
-            <!-- Exclude the certificates files when checking license headers -->
-            <plugin>
-                <groupId>com.mycila</groupId>
-                <artifactId>license-maven-plugin</artifactId>
-                <configuration>
-                    <excludes combine.children="append">
-                        <exclude>src/main/docker/certs/*</exclude>
-                    </excludes>
-                </configuration>
-            </plugin>
         </plugins>
     </build>
+
+    <scm>
+        <connection>scm:git:https://github.com/CAFapi/opensuse-jdk8-maven-image.git</connection>
+        <developerConnection>scm:git:https://github.com/CAFapi/opensuse-jdk8-maven-image.git</developerConnection>
+        <url>https://github.com/CAFapi/opensuse-jdk8-maven-image</url>
+    </scm>
 
 </project>

@@ -1,7 +1,7 @@
 # openSUSE JDK8 Maven Build Image
 
-This project creates a base build image for Maven
+This project creates an openSUSE-based image that includes the JDK 8 and Maven.  It is intended to be used to build other images.
 
-To run the image execute first create an alias
+This command can be used to create an convenience alias for using this image:
 
-`alias mvn2='docker container run -it --rm --network=host -e HTTP_PROXY -e HTTPS_PROXY -e NO_PROXY -v /home/centos/.m2:/root/.m2 -v /var/run/docker.sock:/var/run/docker.sock -v $(pwd):/wd -w /wd dev/apolloscm/opensuse-jdk8-maven:1.0.0-SNAPSHOT mvn'`'
+    alias mvn='docker container run -it --rm --network=host -e HTTP_PROXY -e HTTPS_PROXY -e NO_PROXY -v ~/.m2:/root/.m2 -v /var/run/docker.sock:/var/run/docker.sock -v $(pwd):/wd -w /wd cafapi/opensuse-jdk8-maven:1.0.0 mvn'
