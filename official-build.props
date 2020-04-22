@@ -1,1 +1,1 @@
-SEPG_BUILD_ENV_IMAGE=maven:3.6.2-jdk-8
+SEPG_BUILD_ENV_IMAGE=cafapi/opensuse-jdk8-maven:1.0.0
