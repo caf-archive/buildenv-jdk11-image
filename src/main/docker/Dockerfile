@@ -22,7 +22,7 @@ FROM maven:3.6.3-jdk-8 AS public_maven
 #
 # The actual image definition
 #
-FROM cafinternal/prereleases:opensuse-jdk8-3.0.0-SNAPSHOT
+FROM cafapi/opensuse-jdk8:3
 
 # Copy the required files from public maven image
 COPY --from=public_maven /usr/local/bin/mvn-entrypoint.sh /usr/local/bin/
