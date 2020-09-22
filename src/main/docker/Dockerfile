@@ -14,15 +14,19 @@
 # limitations under the License.
 #
 
+# Docker registries
+ARG DOCKER_HUB_PRIVATE=docker.io
+ARG DOCKER_HUB_PUBLIC=docker.io
+
 #
 # Public maven image that contains the mvn-entrypoint.sh and settings-docker.xml files required
 #
-FROM maven:3.6.3-jdk-8 AS public_maven
+FROM ${DOCKER_HUB_PUBLIC}/library/maven:3.6.3-jdk-8 AS public_maven
 
 #
 # The actual image definition
 #
-FROM cafapi/opensuse-jdk8:3
+FROM ${DOCKER_HUB_PUBLIC}/cafapi/opensuse-jdk8:3
 
 # Copy the required files from public maven image
 COPY --from=public_maven /usr/local/bin/mvn-entrypoint.sh /usr/local/bin/
