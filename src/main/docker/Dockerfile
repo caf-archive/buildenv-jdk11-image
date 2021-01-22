@@ -14,8 +14,7 @@
 # limitations under the License.
 #
 
-# Docker registries
-ARG DOCKER_HUB_PRIVATE=docker.io
+# Docker registry
 ARG DOCKER_HUB_PUBLIC=docker.io
 
 #
