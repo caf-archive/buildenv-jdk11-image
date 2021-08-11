@@ -27,13 +27,13 @@
         <version>2.3.0-212</version>
     </parent>
 
-    <artifactId>opensuse-jdk8-maven-image</artifactId>
+    <artifactId>buildenv-jdk8-image</artifactId>
     <version>2.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>openSUSE JDK8 Maven image</name>
     <description>An openSUSE-based image which includes JDK8 and Maven.</description>
-    <url>https://github.com/CAFapi/opensuse-jdk8-maven-image</url>
+    <url>https://github.com/CAFapi/buildenv-jdk8-image</url>
 
     <inceptionYear>2019</inceptionYear>
 
@@ -73,7 +73,7 @@
                     <autoPull>always</autoPull>
                     <images>
                         <image>
-                            <name>${dockerCafImagePrefix}opensuse-jdk8-maven${dockerProjectVersion}</name>
+                            <name>${dockerCafImagePrefix}buildenv-jdk8${dockerProjectVersion}</name>
                             <build>
                                 <dockerFileDir>.</dockerFileDir>
                                 <args>
@@ -92,9 +92,9 @@
     </build>
 
     <scm>
-        <connection>scm:git:https://github.com/CAFapi/opensuse-jdk8-maven-image.git</connection>
-        <developerConnection>scm:git:https://github.com/CAFapi/opensuse-jdk8-maven-image.git</developerConnection>
-        <url>https://github.com/CAFapi/opensuse-jdk8-maven-image</url>
+        <connection>scm:git:https://github.com/CAFapi/buildenv-jdk8-image.git</connection>
+        <developerConnection>scm:git:https://github.com/CAFapi/buildenv-jdk8-image.git</developerConnection>
+        <url>https://github.com/CAFapi/buildenv-jdk8-image</url>
     </scm>
 
 </project>
