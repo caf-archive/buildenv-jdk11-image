@@ -1,2 +1,2 @@
-SEPG_BUILD_ENV_IMAGE=cafapi/prereleases:buildenv-jdk8-2.0.0-SNAPSHOT
+SEPG_BUILD_ENV_IMAGE=cafapi/opensuse-jdk8-maven:1.0.0
 REQUIRED_DOCKER_HOST_TYPE=PRIVILEGED
