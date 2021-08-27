@@ -1,5 +1,5 @@
 #
-# Copyright 2019-2020 Micro Focus or one of its affiliates.
+# Copyright 2019-2021 Micro Focus or one of its affiliates.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -20,12 +20,12 @@ ARG DOCKER_HUB_PUBLIC=docker.io
 #
 # Public maven image that contains the mvn-entrypoint.sh and settings-docker.xml files required
 #
-FROM ${DOCKER_HUB_PUBLIC}/library/maven:3.6.3-jdk-8 AS public_maven
+FROM ${DOCKER_HUB_PUBLIC}/library/maven:3.6.3-jdk-11 AS public_maven
 
 #
 # The actual image definition
 #
-FROM ${DOCKER_HUB_PUBLIC}/cafapi/opensuse-jdk8:3
+FROM ${DOCKER_HUB_PUBLIC}/cafapi/opensuse-jdk11:3
 
 # Copy the required files from public maven image
 COPY --from=public_maven /usr/local/bin/mvn-entrypoint.sh /usr/local/bin/
