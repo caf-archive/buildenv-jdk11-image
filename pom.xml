@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 
-    Copyright 2019-2020 Micro Focus or one of its affiliates.
+    Copyright 2019-2021 Micro Focus or one of its affiliates.
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -27,18 +27,18 @@
         <version>2.3.0-212</version>
     </parent>
 
-    <artifactId>buildenv-jdk8-image</artifactId>
+    <artifactId>buildenv-jdk11-image</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>openSUSE JDK8 Maven image</name>
-    <description>An openSUSE-based image which includes JDK8 and Maven.</description>
-    <url>https://github.com/CAFapi/buildenv-jdk8-image</url>
+    <name>openSUSE JDK11 Maven image</name>
+    <description>An openSUSE-based image which includes JDK11 and Maven.</description>
+    <url>https://github.com/CAFapi/buildenv-jdk11-image</url>
 
     <inceptionYear>2019</inceptionYear>
 
     <properties>
-        <copyrightYear>2020</copyrightYear>
+        <copyrightYear>2021</copyrightYear>
         <maven.install.skip>true</maven.install.skip>
         <skipNexusStagingDeployMojo>true</skipNexusStagingDeployMojo>
         <dockerHubOrganization>cafapi</dockerHubOrganization>
@@ -73,7 +73,7 @@
                     <autoPull>always</autoPull>
                     <images>
                         <image>
-                            <name>${dockerCafImagePrefix}buildenv-jdk8${dockerProjectVersion}</name>
+                            <name>${dockerCafImagePrefix}buildenv-jdk11${dockerProjectVersion}</name>
                             <build>
                                 <dockerFileDir>.</dockerFileDir>
                                 <args>
@@ -92,9 +92,9 @@
     </build>
 
     <scm>
-        <connection>scm:git:https://github.com/CAFapi/buildenv-jdk8-image.git</connection>
-        <developerConnection>scm:git:https://github.com/CAFapi/buildenv-jdk8-image.git</developerConnection>
-        <url>https://github.com/CAFapi/buildenv-jdk8-image</url>
+        <connection>scm:git:https://github.com/CAFapi/buildenv-jdk11-image.git</connection>
+        <developerConnection>scm:git:https://github.com/CAFapi/buildenv-jdk11-image.git</developerConnection>
+        <url>https://github.com/CAFapi/buildenv-jdk11-image</url>
     </scm>
 
 </project>
