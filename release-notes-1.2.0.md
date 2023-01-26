@@ -1,5 +1,3 @@
-!not-ready-for-release!
-
 #### Version Number
 ${version-number}
 
@@ -7,3 +5,4 @@ ${version-number}
 - US619052: Updated Maven to version [3.8.7](https://maven.apache.org/docs/3.8.7/release-notes.html)
 
 #### Known Issues
+- None
