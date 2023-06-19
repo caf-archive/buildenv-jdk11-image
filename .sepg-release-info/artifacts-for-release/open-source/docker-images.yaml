@@ -1,0 +1,3 @@
+- dockerRepositoryId: cafapi/prereleases
+  imageName: buildenv-jdk11
+  tag: "1.3.3-186"
