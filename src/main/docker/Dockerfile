@@ -20,7 +20,7 @@ ARG DOCKER_HUB_PUBLIC=docker.io
 #
 # Public maven image that contains the mvn-entrypoint.sh and settings-docker.xml files required
 #
-FROM ${DOCKER_HUB_PUBLIC}/library/maven:3.8.6-jdk-11 AS public_maven
+FROM ${DOCKER_HUB_PUBLIC}/library/maven:3.9.2-eclipse-temurin-11 AS public_maven
 
 #
 # The actual image definition
