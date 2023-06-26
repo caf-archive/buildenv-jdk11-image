@@ -40,8 +40,8 @@ RUN zypper -n refresh && \
     echo 6e29de1b58e17a54465d07eaa18bbde60b774bd17b1d7efcd2bc8dbbaf91c62abe8acb3933c5c27e630dc3b118453d2d0ab7fb206cf403e204708555bb0a6059 \
          /usr/share/maven/ref/settings-docker.xml | sha512sum -c - && \
     mkdir -p /usr/share/maven /usr/share/maven/ref && \
-    curl -fsSL -o /tmp/apache-maven.tar.gz https://apache.osuosl.org/maven/maven-3/3.9.2/binaries/apache-maven-3.9.2-bin.tar.gz && \
-    echo 900bdeeeae550d2d2b3920fe0e00e41b0069f32c019d566465015bdd1b3866395cbe016e22d95d25d51d3a5e614af2c83ec9b282d73309f644859bbad08b63db \
+    curl -fsSL -o /tmp/apache-maven.tar.gz https://apache.osuosl.org/maven/maven-3/3.9.3/binaries/apache-maven-3.9.3-bin.tar.gz && \
+    echo 400fc5b6d000c158d5ee7937543faa06b6bda8408caa2444a9c947c21472fde0f0b64ac452b8cec8855d528c0335522ed5b6c8f77085811c7e29e1bedbb5daa2 \
          /tmp/apache-maven.tar.gz | sha512sum -c - && \
     tar -xzf /tmp/apache-maven.tar.gz -C /usr/share/maven --strip-components=1 && \
     rm -f /tmp/apache-maven.tar.gz && \
