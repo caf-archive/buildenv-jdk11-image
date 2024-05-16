@@ -14,18 +14,15 @@
 # limitations under the License.
 #
 
-# Docker registry
-ARG DOCKER_HUB_PUBLIC=docker.io
-
 #
 # Public maven image that contains the mvn-entrypoint.sh and settings-docker.xml files required
 #
-FROM ${DOCKER_HUB_PUBLIC}/library/maven:3.9.3-eclipse-temurin-11 AS public_maven
+FROM ${projectDockerRegistry}/library/maven AS public_maven
 
 #
 # The actual image definition
 #
-FROM ${DOCKER_HUB_PUBLIC}/cafapi/opensuse-jdk11:4
+FROM ${projectDockerRegistry}/cafapi/opensuse-jdk11
 
 # Copy the required files from public maven image
 COPY --from=public_maven /usr/local/bin/mvn-entrypoint.sh /usr/local/bin/

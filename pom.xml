@@ -44,15 +44,47 @@
         <dockerHubOrganization>cafapi</dockerHubOrganization>
         <dockerCafImagePrefix>${dockerImagePrefix}${dockerHubOrganization}${dockerOrgSeperator}</dockerCafImagePrefix>
         <dockerProjectVersion>${dockerVersionSeperator}${project.version}</dockerProjectVersion>
-        <DOCKER_HUB_PUBLIC>${dockerHubPublic}</DOCKER_HUB_PUBLIC>
+        <projectDockerRegistry>buildenv-jdk11-image-${project.version}.project-registries.local</projectDockerRegistry>
     </properties>
 
     <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>com.github.cafapi.plugins.docker.versions</groupId>
+                    <artifactId>docker-versions-maven-plugin</artifactId>
+                    <version>1.0.0-SNAPSHOT</version>
+                </plugin>
+                <plugin>
+                    <groupId>io.fabric8</groupId>
+                    <artifactId>docker-maven-plugin</artifactId>
+                    <version>0.34.0</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
         <plugins>
+            <plugin>
+                <groupId>com.github.cafapi.plugins.docker.versions</groupId>
+                <artifactId>docker-versions-maven-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <imageManagement>
+                        <image>
+                            <repository>${dockerHubPublic}/cafapi/opensuse-jdk11</repository>
+                            <tag>4.0.0</tag>
+                            <digest>sha256:0ff93ccd104f9b41dd9225c534e70db1636841ad2b4e42518cb08c0e03e4ca59</digest>
+                        </image>
+                        <image>
+                            <repository>${dockerHubPublic}/library/maven</repository>
+                            <tag>3.9.3-eclipse-temurin-11</tag>
+                            <digest>sha256:0d1560ce0dc20348d401aa0df6690e7ba4d951c31f7aedb1b91478336f25ec70</digest>
+                        </image>
+                    </imageManagement>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>io.fabric8</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
-                <version>0.34.0</version>
                 <executions>
                     <execution>
                         <id>docker-build</id>
@@ -70,7 +102,6 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <autoPull>always</autoPull>
                     <images>
                         <image>
                             <name>${dockerCafImagePrefix}buildenv-jdk11${dockerProjectVersion}</name>
