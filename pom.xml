@@ -28,7 +28,7 @@
     </parent>
 
     <artifactId>buildenv-jdk11-image</artifactId>
-    <version>1.9.0-SNAPSHOT</version>
+    <version>1.8.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>openSUSE JDK11 Maven image</name>
@@ -71,8 +71,8 @@
                     <imageManagement>
                         <image>
                             <repository>${dockerHubPublic}/cafapi/opensuse-jdk11</repository>
-                            <tag>4.1.0</tag>
-                            <digest>sha256:af622a044b6a711e9566d48426782b5c2f5956617f5d7a01f3ff4342be48312c</digest>
+                            <tag>4.1.1</tag>
+                            <digest>sha256:39ec10c7c909e91e6925f64426bde30801f186e11dfac95060a338445e19a1be</digest>
                         </image>
                         <image>
                             <repository>${dockerHubPublic}/library/maven</repository>
